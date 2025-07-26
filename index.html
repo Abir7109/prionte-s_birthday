@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta property="og:title" content="Prionte's Birthday">
+  <meta property="og:description" content="Happy Birthday To You sis, May Allah Bless You With Happiness & Joy.">
+  <meta property="og:image" content="https://i.postimg.cc/d3PKg5m4/FB-IMG-1753509877483.jpg">
+  <meta property="og:url" content="">
+  <meta property="og:type" content="website">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday, Prionte!</title>
+  <!-- Google font for a playful, celebratory style -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Link to external CSS file -->
+  <style type="text/css">
+  /* General reset and background */
+  body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* No scrollbars during animations */
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  font-family: 'Arial', sans-serif;
+  }
+  
+  /* Top banner styling */
+  .banner-top {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+  opacity: 0;
+  animation: slideFromTop 1.5s ease forwards;
+  }
+  
+  .banner-item {
+  font-size: 2rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+  }
+  
+  /* Centering the main content */
+  .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 2; /* Content above confetti and props */
+  }
+  
+  /* Hero section styling */
+  .hero {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out;
+  }
+  
+  /* Profile picture styling */
+  .profile-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 20px;
+  animation: zoomIn 1.5s ease;
+  }
+  
+  /* Title and message styling */
+  .title {
+  font-family: 'Pacifico', cursive; /* Celebratory font */
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin: 10px 0;
+  animation: slideDown 1s ease-out;
+  }
+  
+  .message {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 10px;
+  animation: slideUp 1s ease-out;
+  }
+  /* More Confetti Pieces */
+  .confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  animation: hideConfetti 5s linear forwards; /* Confetti disappears after 5 seconds */
+  }
+  
+  .confetti-piece {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0.8;
+  animation: confettiFall 3s linear infinite;
+  }
+  
+  /* Add more confetti elements */
+  .confetti-piece:nth-child(1) { left: 5%; animation-delay: 0s; background-color: #ff4081; }
+  .confetti-piece:nth-child(2) { left: 15%; animation-delay: 0.3s; background-color: #40c4ff; }
+  .confetti-piece:nth-child(3) { left: 25%; animation-delay: 0.6s; background-color: #69f0ae; }
+  .confetti-piece:nth-child(4) { left: 35%; animation-delay: 0.9s; background-color: #ffeb3b; }
+  .confetti-piece:nth-child(5) { left: 45%; animation-delay: 1.2s; background-color: #ea80fc; }
+  .confetti-piece:nth-child(6) { left: 55%; animation-delay: 1.5s; background-color: #8c9eff; }
+  .confetti-piece:nth-child(7) { left: 65%; animation-delay: 1.8s; background-color: #ff6e40; }
+  .confetti-piece:nth-child(8) { left: 75%; animation-delay: 2.1s; background-color: #64ffda; }
+  .confetti-piece:nth-child(9) { left: 85%; animation-delay: 2.4s; background-color: #d500f9; }
+  .confetti-piece:nth-child(10) { left: 95%; animation-delay: 2.7s; background-color: #00e676; }
+  
+  /* Falling confetti animation */
+  @keyframes confettiFall {
+  0% { transform: translateY(-10vh) rotateZ(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(110vh) rotateZ(360deg); opacity: 0; }
+  }
+  
+  /* Animation to make confetti disappear */
+  @keyframes hideConfetti {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+  }
+  
+  /* Confetti container styling */
+  .confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+  }
+  
+  
+  /* Confetti pieces styling */
+  .confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0.8;
+  animation: confettiFall 3s linear infinite;
+  }
+  
+  .confetti-piece:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  background-color: #ff4081;
+  }
+  .confetti-piece:nth-child(2) {
+  left: 30%;
+  animation-delay: 0.5s;
+  background-color: #40c4ff;
+  }
+  .confetti-piece:nth-child(3) {
+  left: 50%;
+  animation-delay: 1s;
+  background-color: #69f0ae;
+  }
+  .confetti-piece:nth-child(4) {
+  left: 70%;
+  animation-delay: 1.5s;
+  background-color: #ffeb3b;
+  }
+  .confetti-piece:nth-child(5) {
+  left: 90%;
+  animation-delay: 2s;
+  background-color: #ea80fc;
+  }
+  
+  /* Party props styling (from bottom-left and bottom-right) */
+  .party-prop {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: partyPropSlide 2s ease forwards;
+  z-index: 3;
+  }
+  
+  .party-prop.left {
+  left: 10px;
+  }
+  
+  .party-prop.right {
+  right: 10px;
+  }
+  
+  .prop-icon {
+  font-size: 2.5rem;
+  }
+  
+  /* ----------------- Animations ----------------- */
+  
+  /* Fade in for overall content */
+  @keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+  
+  /* Zoom in for the profile picture */
+  @keyframes zoomIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Slide in from the top for the banner and title */
+  @keyframes slideDown {
+  0% { transform: translateY(-50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Slide up effect for the message */
+  @keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Falling confetti animation */
+  @keyframes confettiFall {
+  0% {
+  transform: translateY(-10vh) rotateZ(0deg);
+  opacity: 0;
+  }
+  10% {
+  opacity: 1;
+  }
+  100% {
+  transform: translateY(110vh) rotateZ(360deg);
+  opacity: 0;
+  }
+  }
+  
+  /* Banner sliding from the top */
+  @keyframes slideFromTop {
+  0% { transform: translate(-50%, -100%); opacity: 0; }
+  100% { transform: translate(-50%, 0); opacity: 1; }
+  }
+  
+  /* Banner item fade in and slight upward motion */
+  @keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* Party props rising up from the bottom */
+  @keyframes partyPropSlide {
+  0% { transform: translateY(100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* --- Gift Section --- */
+  .gift-section {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  }
+  
+  .gift-text {
+  font-size: 1.8rem;
+  color: #fff;
+  text-decoration: underline;
+  margin-bottom: 10px;
+  }
+  /* --- Gift Section --- */
+  .gift-section {
+  position: absolute;
+  bottom: 50px;  /* Moved a little higher than before */
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  }
+  
+  .gift-text {
+  font-size: 2rem;
+  font-weight: bold;    /* Bold text */
+  color: #fff;
+  text-decoration: underline;
+  margin-bottom: 15px;
+  }
+  
+  .gift-button {
+  font-size: 1.3rem;
+  padding: 12px 25px;
+  font-weight: bold;   /* Bold button text */
+  color: #fff;
+  background: linear-gradient(135deg, #f44336, #ff5722);  /* Increased contrast for better visibility */
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);  /* Adds depth to the button */
+  }
+  
+  .gift-button:hover {
+  background: linear-gradient(135deg, #ff5722, #f44336);
+  transform: translateY(-2px);
+  }
+  /* Modal Overlay Styling */
+  .modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  }
+  
+  /* Stylish Modal Box */
+  .note-modal {
+  background: linear-gradient(135deg, #ff4081, #ffeb3b);
+  padding: 20px 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 70%;
+  border: 6px solid white; /* Thicker border */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  animation: popupEffect 0.8s ease-out;
+  }
+  
+  /* Modal Heading */
+  .modal-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  /* Underline made of dashes */
+  .underline {
+  font-size: 1.8rem;
+  letter-spacing: 5px;
+  color: #fff;
+  margin: 10px 0;
+  }
+  
+  /* Modal Text Styling */
+  .modal-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.5;
+  }
+  
+  /* Glow Animation */
+  @keyframes popupEffect {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+  }
+  
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top banner with party emojis coming from above -->
+  <div class="banner-top">
+    <span class="banner-item" style="animation-delay: 0.2s;">🎈</span>
+    <span class="banner-item" style="animation-delay: 0.4s;">🎊</span>
+    <span class="banner-item" style="animation-delay: 0.6s;">🥳</span>
+    <span class="banner-item" style="animation-delay: 0.8s;">🎉</span>
+    <span class="banner-item" style="animation-delay: 1s;">🍰</span>
+  </div>
+
+  <!-- Confetti container for celebratory animations -->
+  <div class="confetti-container">
+    <span class="confetti-piece"></span>
+    <span class="confetti-piece"></span>
+    <span class="confetti-piece"></span>
+    <span class="confetti-piece"></span>
+    <span class="confetti-piece"></span>
+  </div>
+
+  <!-- Left and right party props coming from the bottom -->
+  <div class="party-prop left">
+    <span class="prop-icon">🎉</span>
+    <span class="prop-icon">🎈</span>
+  </div>
+  <div class="party-prop right">
+    <span class="prop-icon">🎊</span>
+    <span class="prop-icon">🥳</span>
+  </div>
+
+  <!-- Main container for the birthday message -->
+  <div class="container">
+    <div class="hero">
+      <!-- Replace with the correct path to Prionte's picture -->
+      <img src="https://i.postimg.cc/d3PKg5m4/FB-IMG-1753509877483.jpg" alt="Prionte's Birthday" class="profile-pic" />
+      <h1 class="title">Happy Birthday, Prionte!</h1>
+    </div>
+  </div>
+  <!-- Gift Section (Bottom of the Page) -->
+  <div class="gift-section">
+  <p class="gift-text">Here is your gift</p>
+  <a class="gift-button" href="#">Gift</a>
+  </div>
+  
+  <!-- Modal Note (Initially Hidden) -->
+  <div class="modal-overlay" id="modalOverlay">
+  <div class="note-modal">
+  <h2 class="modal-heading">NOTE</h2>
+  <div class="underline">--------</div>
+  <p class="modal-text">
+  Hello Prionte! Here's a gift for your birthday.  (<a href="https://i.postimg.cc/25djdbp1/Black-Yellow-Simple-Happy-Birthday-Card-20250726-123003-0000.jpg" target="_blank">Wait for 10 Seconds</a>)<br>I posted you & your sis's photo online and providing you the link, you can access it over the internet from anywhere.<br>
+  Wish you a very very happy birthday.<br><br>
+  Your brother Abir!
+  </p>
+  </div>
+  </div>
+  
+  <!-- JavaScript for Modal and Redirection -->
+  <script>
+  document.querySelector('.gift-button').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  // Apply a blur effect on key elements
+  let blurSelectors = ['.container', '.banner-top', '.confetti-container', '.party-prop.left', '.party-prop.right'];
+  blurSelectors.forEach(selector => {
+  document.querySelector(selector)?.classList.add('blur');
+  });
+  
+  // Show the modal overlay (changing display from none to flex)
+  let modal = document.getElementById('modalOverlay');
+  modal.style.display = 'flex';
+  
+  // After 7 seconds, redirect to the given link
+  setTimeout(function() {
+  window.location.href = "https://i.postimg.cc/25djdbp1/Black-Yellow-Simple-Happy-Birthday-Card-20250726-123003-0000.jpg";
+  }, 7000);
+  });
+  </script>
+</body>
+</html>abir/";
+  }, 7000);
+  });
+  </script>
+</body>
+</html>
